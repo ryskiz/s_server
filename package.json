@@ -1,0 +1,22 @@
+{
+  "name": "sultan_server",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {},
+  "author": "Ryan Skinner",
+  "license": "MIT",
+  "dependencies": {
+    "bcrypt": "^1.0.2",
+    "body-parser": "^1.17.2",
+    "express": "^4.15.3",
+    "pg": "^6.4.1",
+    "pg-hstore": "^2.3.2",
+    "rambda": "^0.7.3",
+    "sequelize": "^4.3.2",
+    "volleyball": "^1.4.1"
+  }
+}
