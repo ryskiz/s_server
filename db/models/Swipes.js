@@ -1,5 +1,5 @@
-const Sequelize = require('sequelize');
-const db = require('../sequelizeDb');
+const Sequelize = require('sequelize')
+const db = require('../sequelizeDb')
 
 const PossibleMatches = db.define('possibleMatches', {
   matchIdArray: {
@@ -7,14 +7,12 @@ const PossibleMatches = db.define('possibleMatches', {
     defaultValue: [],
     allowNull: true
   }
-});
+})
 
 
 PossibleMatches.prototype.addToMatchArray = function(num){
-  this.matchIdArray = this.matchIdArray.concat([num]);
-  this.save();
-  return this.matchIdArray;
-};
-module.exports = PossibleMatches;
-
-
+  this.matchIdArray = this.matchIdArray.concat([num])
+  this.save()
+  return this.matchIdArray
+}
+module.exports = PossibleMatches
