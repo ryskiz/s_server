@@ -6,7 +6,8 @@ const volleyball = require('volleyball')
 const db = require('./db')
 
 app.use(volleyball)
-app.use(bodyParser.json())
+app.use(bodyParser.json({limit: '50mb'}))
+app.use(bodyParser.urlencoded({limit: '50mb'}))
 
 app.use('/api', require('./apiRoutes'))
 
