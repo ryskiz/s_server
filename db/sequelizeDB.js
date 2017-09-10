@@ -5,8 +5,4 @@ const db = new Sequelize(process.env.DATABASE_URL || 'postgres://localhost:5432/
 });
 
 //require in all your models
-
-
-
-
 module.exports = db;

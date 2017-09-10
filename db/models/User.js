@@ -25,7 +25,7 @@ const User = db.define('user', {
   password: Sequelize.VIRTUAL, // Note that this is a virtual, and not actually stored in DB
   gender: {
     type: Sequelize.ENUM,
-    values: ['Male', 'female']
+    values: ['Male', 'Female']
   },
   bio: {
     type: Sequelize.TEXT,
@@ -34,6 +34,10 @@ const User = db.define('user', {
   gems: {
     type: Sequelize.INTEGER,
     defaultValue: 0
+  },
+  photo: {
+    type: Sequelize.TEXT,
+    allowNull: true
   },
   latitude: {
     type: Sequelize.INTEGER,

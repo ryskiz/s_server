@@ -29,14 +29,15 @@ router.get('/:id', function (req, res, next) {
 
 // matches POST requests to /api/users/
 router.post('/', function (req, res, next) {
-  const {email, password, bio, gender, firstName, lastName} = req.body;
+  const {email, password, bio, gender, firstName, lastName, photo} = req.body;
   User.create({
     email,
     password,
     bio,
     gender,
     first_name: firstName,
-    last_name: lastName
+    last_name: lastName,
+    photo
   })
     .then((user) => {
     res.send(user)
