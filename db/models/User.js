@@ -1,6 +1,6 @@
-const Sequelize = require('sequelize');
-const db = require('../sequelizeDb');
-const bcrypt = require('bcrypt');
+const Sequelize = require('sequelize')
+const db = require('../sequelizeDb')
+const bcrypt = require('bcrypt')
 
 const User = db.define('user', {
   first_name: {
@@ -58,15 +58,15 @@ const User = db.define('user', {
     beforeUpdate: setEmailAndPassword,
   },
   classMethods: {}
-});
+})
 
 User.prototype.authenticate = function(plaintext){
   return new Promise((resolve, reject) =>
     bcrypt.compare(plaintext, this.password_digest, (err, result) => {
-      if (err) reject(err);
+      if (err) reject(err)
       else resolve(result)
     }))
-};
+}
 
 function setEmailAndPassword(user) {
   user.email = user.email && user.email.toLowerCase()
@@ -74,11 +74,11 @@ function setEmailAndPassword(user) {
 
   return new Promise((resolve, reject) =>
     bcrypt.hash(user.get('password'), 10, (err, hash) => {
-      if (err) reject(err);
-      user.set('password_digest', hash);
+      if (err) reject(err)
+      user.set('password_digest', hash)
       resolve(user)
     })
-  );
+  )
 }
 
-module.exports = User;
+module.exports = User

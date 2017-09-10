@@ -1,15 +1,15 @@
-const db = require('./sequelizeDb');
-const User = require('./models/User');
-const Possible = require('./models/Swipes');
+const db = require('./sequelizeDb')
+const User = require('./models/User')
+const Possible = require('./models/Swipes')
 //require in all our models
-require('./models');
+require('./models')
 
 // Syncing all the models at once. This promise is used by main.js.
-let syncedDbPromise = db.sync({force:true});
+let syncedDbPromise = db.sync({force:true})
 
 syncedDbPromise
   .then(() => {
-    console.log('Sequelize models synced to PostgreSQL');
+    console.log('Sequelize models synced to PostgreSQL')
     User.create({
       first_name: "Ryan",
       last_name: "Skinner",
@@ -18,7 +18,7 @@ syncedDbPromise
     })
       .then((user) => {
         console.log(`also created user ${user.first_name}`)
-      });
+      })
 
     User.create({
       first_name: "Brian",
@@ -30,4 +30,4 @@ syncedDbPromise
       })
   })
 
-module.exports = syncedDbPromise;
+module.exports = syncedDbPromise

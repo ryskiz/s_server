@@ -1,13 +1,13 @@
 'use strict';
 
 // Require our models. Running each module registers the model into sequelize
-const User = require('./User');
-const UserProfilePicture = require('./UserProfilePicture');
-const PossibleMatches = require('./Swipes');
+const User = require('./User')
+const UserProfilePicture = require('./UserProfilePicture')
+const PossibleMatches = require('./Swipes')
 
 // Form the associations
-UserProfilePicture.belongsTo(User);
-PossibleMatches.belongsTo(User);
+UserProfilePicture.belongsTo(User)
+PossibleMatches.belongsTo(User)
 
 // Song.belongsTo(Album);
 // Album.hasMany(Song);
@@ -24,4 +24,4 @@ module.exports = {
   User,
   UserProfilePicture,
   PossibleMatches
-};
+}
