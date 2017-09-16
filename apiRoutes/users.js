@@ -5,7 +5,13 @@ const User = require('../db/models/User')
 
 // matches GET requests to /api/users/
 router.get('/', function (req, res, next) {
-  User.findAll().then(users => {
+  User.findAll({
+    where: {
+      photo: {
+        $ne: null
+      }
+    }
+  }).then(users => {
     res.send({users})
   })
 })
