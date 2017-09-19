@@ -4,10 +4,14 @@
 const User = require('./User')
 const UserProfilePicture = require('./UserProfilePicture')
 const PossibleMatches = require('./Swipes')
+const Conversations = require('./Conversation')
+const Messages = require('./ConvoMessage')
 
 // Form the associations
 UserProfilePicture.belongsTo(User)
 PossibleMatches.belongsTo(User)
+Conversations.hasMany(Messages)
+Messages.belongsTo(Conversations)
 
 // Song.belongsTo(Album);
 // Album.hasMany(Song);
@@ -23,5 +27,7 @@ PossibleMatches.belongsTo(User)
 module.exports = {
   User,
   UserProfilePicture,
-  PossibleMatches
+  PossibleMatches,
+  Conversations,
+  Messages
 }
